@@ -14,6 +14,7 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
 python verify_all.py
+python generate_whitepaper.py
 ```
 
 생성물은 `results/`에 저장됩니다.
@@ -27,6 +28,8 @@ python verify_all.py
   판정은 **OPEN**입니다.
 - `data_loader.py`: 공식 공개 주소에서 자료를 내려받고 SHA-256을 기록합니다.
 - `verify_all.py`: 두 계산을 실행하고 결과 파일의 SHA-256 목록을 만듭니다.
+- `generate_whitepaper.py`: 잔차 그래프와 정량표를 포함한 공개 PDF 백서를 만듭니다.
+- `Nam_Seung_ho_Law_Open_Data_Whitepaper_v1.0.pdf`: 다운로드용 백서 완성본입니다.
 
 ## 고정 후보식
 
@@ -34,6 +37,9 @@ python verify_all.py
 E_base^2 = 1 + Omega_m * ((1+z)^3 - 1)
 E_NS^2   = exp(alpha * ((1+z)^nu - 1))
 ```
+
+우주상수 Λ항은 두 식 모두에 포함하지 않습니다. 기계판독 고정 명세는
+`NO_LAMBDA_MODEL.json`, 설명본은 `NO_LAMBDA_README.md`에 있습니다.
 
 ## 판정 원칙
 
