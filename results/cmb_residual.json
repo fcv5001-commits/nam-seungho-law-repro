@@ -1,0 +1,14 @@
+{
+  "project": "Nam Seung-ho Law open-data reproduction",
+  "author": "Nam Seung-ho",
+  "dataset": "https://irsa.ipac.caltech.edu/data/Planck/release_3/ancillary-data/cosmoparams/COM_PowerSpect_CMB-TT-binned_R3.01.txt",
+  "dataset_sha256": "ed2b8b51b033e668e661f6cf4eb7705f15bcaf358189dfc4a4481cc7020130cd",
+  "n_bins": 83,
+  "reference": "Planck-released BestFit column",
+  "diagnostic_chi2_diagonal": 65.12154684822823,
+  "mean_normalized_residual": -0.009686599217829255,
+  "rms_normalized_residual": 0.885774773844149,
+  "max_abs_normalized_residual": 2.8045062930784366,
+  "status": "OPEN",
+  "reason": "diagnostic only; covariance, foreground nuisance likelihood, and independent NS TT/TE/EE spectra are not implemented"
+}
