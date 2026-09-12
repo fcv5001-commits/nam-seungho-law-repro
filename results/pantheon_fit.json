@@ -1,0 +1,25 @@
+{
+  "project": "Nam Seung-ho Law open-data reproduction",
+  "author": "Nam Seung-ho",
+  "dataset": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon%2B_Data/4_DISTANCES_AND_COVAR/Pantheon%2BSH0ES.dat",
+  "dataset_sha256": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+  "sample_rule": "IS_CALIBRATOR == 0 and zHD > 0.01",
+  "n": 1580,
+  "likelihood_scope": "diagonal errors only; full covariance not included",
+  "baseline_no_lambda": {
+    "formula": "E^2=1+Omega_m*((1+z)^3-1)",
+    "omega_m": 0.34910027248495124,
+    "offset": -19.344432866938448,
+    "chi2": 694.1391192003923
+  },
+  "ns_candidate": {
+    "formula": "E^2=exp(alpha*((1+z)^nu-1))",
+    "alpha": 1.241388651356863,
+    "nu": 0.9619662576532764,
+    "offset": -19.33883192267744,
+    "chi2": 693.9547939814976
+  },
+  "delta_chi2_ns_minus_baseline": -0.18432521889474174,
+  "status": "OPEN",
+  "reason": "exploratory in-sample diagonal fit; not a held-out or full-covariance validation"
+}
