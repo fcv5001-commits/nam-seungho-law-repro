@@ -117,6 +117,7 @@ def footer(canvas, doc):
 def build_pdf():
     pantheon_plot, cmb_plot = make_plots()
     p = load_json("pantheon_fit.json"); c = load_json("cmb_residual.json")
+    saved = load_json("pantheon_no_lambda_saved_run.json")
     pdfmetrics.registerFont(TTFont("NotoKR", str(ensure_font())))
     styles = getSampleStyleSheet()
     body = ParagraphStyle("body", parent=styles["BodyText"], fontName="NotoKR", fontSize=10.5, leading=17, textColor=colors.HexColor("#18313d"), spaceAfter=8)
@@ -136,11 +137,11 @@ def build_pdf():
     story += [status, Spacer(1, 18*mm), Paragraph("저자·발명자: 남승호", center), Paragraph(f"공개판 v1.0 · {date.today().isoformat()} · 비동료심사 연구기록", small), PageBreak()]
 
     story += [Paragraph("1. 요약", h2), Paragraph("이 백서는 남승호법칙 우주론 후보식에 대해 공개된 Pantheon+ 초신성 자료와 Planck 2018 TT 구간자료를 사용한 재현 가능한 계산 기록이다. 코드, 입력 주소, 결과 JSON과 SHA-256을 공개한다. 현재 계산은 표본내 탐색 적합 및 잔차 진단이며, 독립 전향예측이나 완전한 우주론 likelihood 검증으로 해석하지 않는다.", body)]
-    rows=[["검증 항목","수치","판정"],["Pantheon+ 사용 표본",f"{p['n']:,}개","재현 PASS"],["무-Λ 기준식 χ²",f"{p['baseline_no_lambda']['chi2']:.6f}","OPEN"],["NS 후보식 χ²",f"{p['ns_candidate']['chi2']:.6f}","OPEN"],["Δχ² (NS−기준)",f"{p['delta_chi2_ns_minus_baseline']:.6f}","OPEN"],["Planck TT 구간",f"{c['n_bins']}개","재현 PASS"],["TT 대각 진단 χ²",f"{c['diagnostic_chi2_diagonal']:.6f}","OPEN"],["최대 |정규화 잔차|",f"{c['max_abs_normalized_residual']:.6f}","OPEN"]]
+    rows=[["검증 항목","수치","판정"],["무-Λ 저장 χ²_GR",f"{saved['chi2_gr_no_lambda']:.6f}","OPEN"],["무-Λ 저장 χ²_NS",f"{saved['chi2_ns_no_lambda']:.6f}","OPEN"],["무-Λ 저장 Δχ²",f"{saved['delta_chi2_ns_minus_gr']:.6f}","OPEN·미봉인"],["현재 공개코드 Δχ²",f"{p['delta_chi2_ns_minus_baseline']:.6f}","재현 PASS·OPEN"],["무-Λ 저장 ΔAIC",f"{saved['delta_aic']:.6f}","OPEN"],["무-Λ 저장 ΔBIC",f"{saved['delta_bic']:.6f}","OPEN"],["Planck TT 구간",f"{c['n_bins']}개","재현 PASS"],["TT 대각 진단 χ²",f"{c['diagnostic_chi2_diagonal']:.6f}","OPEN"]]
     t=Table(rows,colWidths=[72*mm,55*mm,43*mm],repeatRows=1); t.setStyle(TableStyle([("FONTNAME",(0,0),(-1,-1),"NotoKR"),("FONTSIZE",(0,0),(-1,-1),9),("BACKGROUND",(0,0),(-1,0),colors.HexColor("#0b5660")),("TEXTCOLOR",(0,0),(-1,0),colors.white),("GRID",(0,0),(-1,-1),.45,colors.HexColor("#90a4ae")),("ROWBACKGROUNDS",(0,1),(-1,-1),[colors.white,colors.HexColor("#f2f7f7")]),("ALIGN",(1,1),(-1,-1),"CENTER"),("VALIGN",(0,0),(-1,-1),"MIDDLE"),("TOPPADDING",(0,0),(-1,-1),7),("BOTTOMPADDING",(0,0),(-1,-1),7)]))
-    story += [Spacer(1,4*mm),t,Spacer(1,6*mm),Paragraph("핵심 판정: Δχ²의 작은 음수는 이 제한된 표본내 대각오차 비교에서 NS 후보식의 χ²가 약간 작았다는 뜻일 뿐, 통계적 우월성이나 새로운 자연법칙 확정을 뜻하지 않는다.",body),PageBreak()]
+    story += [Spacer(1,4*mm),t,Spacer(1,6*mm),Paragraph("핵심 정정: 무-Λ Pantheon+SH0ES 저장 실행값은 Δχ²=-39.790212이며, 과거의 ‘약 -38’은 ΔAIC=-37.790212의 반올림 표현으로 구분한다. 현재 공개 대각오차 코드의 Δχ²=-0.184325는 다른 계산 경로이므로 두 값을 합치거나 교체하지 않는다.",body),Paragraph("판정: 무-Λ 저장 실행값은 원 입력·전체 공분산·선택조건을 동일하게 공개 재실행하기 전까지 OPEN·미봉인이다.",body),PageBreak()]
 
-    story += [Paragraph("2. Pantheon+ 잔차", h2), Image(str(pantheon_plot), width=174*mm, height=92*mm), Spacer(1,5*mm), Paragraph(f"선택 규칙은 IS_CALIBRATOR=0 및 zHD&gt;0.01이다. 무-Λ 기준식의 최적 Ωm={p['baseline_no_lambda']['omega_m']:.6f}, NS 후보식의 최적 α={p['ns_candidate']['alpha']:.6f}, ν={p['ns_candidate']['nu']:.6f}이다. 두 모형 모두 절대등급/H₀ 축퇴에 해당하는 상수 offset을 profile했다.",body),Paragraph("제한: 공개 배포본의 대각오차 열만 사용했다. 전체 통계·계통 공분산, 선택효과 likelihood, 사전 고정된 held-out 표본이 포함되지 않았으므로 독립검증 판정은 OPEN이다.",body),PageBreak()]
+    story += [Paragraph("2. Pantheon+ 잔차", h2), Image(str(pantheon_plot), width=174*mm, height=92*mm), Spacer(1,5*mm), Paragraph(f"이 그래프는 현재 공개 코드 경로다. 선택 규칙은 IS_CALIBRATOR=0 및 zHD&gt;0.01이며, 무-Λ 기준식의 최적 Ωm={p['baseline_no_lambda']['omega_m']:.6f}, NS 후보식의 최적 α={p['ns_candidate']['alpha']:.6f}, ν={p['ns_candidate']['nu']:.6f}이다. 두 모형 모두 절대등급/H₀ 축퇴에 해당하는 상수 offset을 profile했다.",body),Paragraph("현재 그래프의 Δχ²=-0.184325는 대각오차 표본내 비교다. 별도 보존한 무-Λ 저장 실행값 Δχ²=-39.790212는 원 입력·전체 공분산·선택조건이 공개 코드에 복원된 뒤 같은 그래프로 다시 생성해야 한다.",body),Paragraph("제한: 전체 통계·계통 공분산, 선택효과 likelihood, 사전 고정된 held-out 표본이 포함되지 않았으므로 독립검증 판정은 OPEN이다.",body),PageBreak()]
 
     story += [Paragraph("3. Planck TT 정규화 잔차", h2), Image(str(cmb_plot), width=174*mm, height=92*mm), Spacer(1,5*mm), Paragraph(f"Planck PR3가 공개한 TT 83개 구간의 관측값과 같은 파일의 BestFit 열을 비교했다. 대칭화한 오차로 계산한 대각 진단 χ²={c['diagnostic_chi2_diagonal']:.6f}, RMS 정규화 잔차={c['rms_normalized_residual']:.6f}, 최대 절댓값={c['max_abs_normalized_residual']:.6f}이다.",body),Paragraph("제한: 이 그래프는 Planck 기준모형에 대한 공개 잔차의 재현이다. 남승호법칙 고유 Cℓ을 계산한 결과가 아니다. TT/TE/EE 전체 스펙트럼, 공분산, foreground nuisance likelihood와 독립 NS 이론 입력이 없으므로 CMB 독립검증은 OPEN·미봉인이다.",body),PageBreak()]
 

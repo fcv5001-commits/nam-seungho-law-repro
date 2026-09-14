@@ -1,0 +1,15 @@
+{
+  "project": "Nam Seung-ho Law",
+  "author": "Nam Seung-ho",
+  "record_type": "historical saved no-Lambda run",
+  "lambda_term_included": false,
+  "chi2_gr_no_lambda": 1509.918390,
+  "chi2_ns_no_lambda": 1470.128178,
+  "delta_chi2_ns_minus_gr": -39.790212,
+  "delta_aic": -37.790212,
+  "delta_bic": -32.351240,
+  "status": "OPEN",
+  "seal_status": "UNSEALED",
+  "reproduction_scope": "The numerical record is preserved separately from the current public diagonal-error code path.",
+  "required_next_step": "Reproduce with the original full input/covariance/selection configuration before sealing."
+}
