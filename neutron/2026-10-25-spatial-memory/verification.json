@@ -1,0 +1,56 @@
+{
+  "status": "PASS_NUMERICAL_REPRODUCTION_AND_LINEAR_STABILITY",
+  "checks": {
+    "archived_pole_max_difference": 0.0,
+    "source_sha256_matches_runtime": true,
+    "calibration_and_constant_lapse_identities": true,
+    "positive_matrix_minima": {
+      "Kd": 0.016305300179074105,
+      "H": 0.043292105747516164,
+      "Kx": 0.016305300179074094
+    },
+    "routh_hurwitz_margin_eta": 0.08233435425000193,
+    "all_real_k_linear_stability_condition": true,
+    "time_evolution_crosscheck": [
+      {
+        "k": 0.0,
+        "maximum_ode_exponential_difference": 1.0778467007810377e-10
+      },
+      {
+        "k": 0.1,
+        "maximum_ode_exponential_difference": 1.0778433701119638e-10
+      },
+      {
+        "k": 1.0,
+        "maximum_ode_exponential_difference": 1.0276945960896455e-10
+      },
+      {
+        "k": 5.0,
+        "maximum_ode_exponential_difference": 1.1205936178981801e-10
+      }
+    ]
+  },
+  "input_roles": "Public mass and lifetime calibrate the energy map; not independent test targets.",
+  "scope": "Supplied four-mode linear spatial-memory response and seven-coordinate embedding.",
+  "limitations": [
+    "full 3D topological and binding spatial operator",
+    "weak-transition vertex from same Gamma_NS",
+    "neutron spin and charge sector derivation",
+    "universal metric variation and full gravity field",
+    "Finite probe initial condition is numerical, not measured neutron state.",
+    "Constant lapse is externally specified, not a measured or solved gravitational field.",
+    "Matrix positivity and stability are numerical evidence plus an analytic conditional argument; no interval certificate.",
+    "No nonlinear all-field stability or independent experimental validation is established."
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_sha256": {
+    "run.py": "397bffe7b94dcf1323a51655adc8f9f40f3cf896ab2a0a5b3141f2f9babd3b24",
+    "inputs.json": "aab658d0c0bf1e41f0df054f521b11eebc876eead1a8397b3346259fa925d2f7",
+    "verify.py": "6e5238eab6300e950774fa71d4ff71a1e414424601024c1aa7e0a851d86cff38",
+    "reference_results.json": "ceab9dd3713e6d51f4d427dbc2c722c33c04e603fa22b2c33264ddb6250c797e"
+  }
+}

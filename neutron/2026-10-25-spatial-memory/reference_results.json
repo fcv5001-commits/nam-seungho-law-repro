@@ -1,0 +1,289 @@
+{
+  "name": "남승호법칙 중성자 공간 기억응답 수치구현",
+  "time_KST": "2026-10-25T07:40:44.976267+09:00",
+  "scope": "Trho and dependent REM spatial block; full topological 3D, weak vertex, neutron spin/charge mapping and universal metric variation not supplied",
+  "checks": {
+    "K_positive_min_eigenvalue": 0.016305300179074105,
+    "X_positive_min_generalized_eigenvalue": 0.9999999999999998,
+    "normalization_max_error": 7.771561172376096e-16,
+    "H_diagonalization_max_error": 4.2143866736653144e-15,
+    "Q_embedding_max_error": 0.0,
+    "Q_rank": 4
+  },
+  "spatial_samples": [
+    {
+      "k_dimensionless": 0.0,
+      "poles": [
+        [
+          -4.136064979693805,
+          -0.02359779039130705
+        ],
+        [
+          -1.6736476186197211,
+          -0.037155016217935044
+        ],
+        [
+          -1.1457866850479888,
+          -0.03953208176250665
+        ],
+        [
+          -0.8164893279180281,
+          -0.040663201615188285
+        ],
+        [
+          -0.0,
+          -4.714704145673534
+        ],
+        [
+          -0.0,
+          -4.687589694020268
+        ],
+        [
+          -0.0,
+          -4.6828355629311265
+        ],
+        [
+          -0.0,
+          -4.680573323225767
+        ],
+        [
+          0.8164893279180281,
+          -0.040663201615188285
+        ],
+        [
+          1.1457866850479888,
+          -0.03953208176250665
+        ],
+        [
+          1.6736476186197211,
+          -0.037155016217935044
+        ],
+        [
+          4.136064979693805,
+          -0.02359779039130705
+        ]
+      ],
+      "matrix_vs_cubic_max_difference": 6.2803698347351005e-15,
+      "matrix_pole_max_relative_residual": 3.074304725288433e-14,
+      "Schur_identity_absolute_error": 5.898059818321144e-17
+    },
+    {
+      "k_dimensionless": 0.1,
+      "poles": [
+        [
+          -4.137280559317895,
+          -0.02359175860315399
+        ],
+        [
+          -1.676674619741313,
+          -0.03713981235233965
+        ],
+        [
+          -1.1502128312595017,
+          -0.03951480293683017
+        ],
+        [
+          -0.8226936792861194,
+          -0.040644889367902295
+        ],
+        [
+          -0.0,
+          -4.7147162092498345
+        ],
+        [
+          -0.0,
+          -4.6876201017514605
+        ],
+        [
+          -0.0,
+          -4.68287012058248
+        ],
+        [
+          -0.0,
+          -4.680609947720338
+        ],
+        [
+          0.8226936792861194,
+          -0.040644889367902295
+        ],
+        [
+          1.1502128312595017,
+          -0.03951480293683017
+        ],
+        [
+          1.676674619741313,
+          -0.03713981235233965
+        ],
+        [
+          4.137280559317895,
+          -0.02359175860315399
+        ]
+      ],
+      "matrix_vs_cubic_max_difference": 5.575002909642399e-15,
+      "matrix_pole_max_relative_residual": 9.797003346600565e-15,
+      "Schur_identity_absolute_error": 4.443059973708341e-17
+    },
+    {
+      "k_dimensionless": 1.0,
+      "poles": [
+        [
+          -4.25588820284876,
+          -0.023009658593130977
+        ],
+        [
+          -1.9531207550240695,
+          -0.03569536673063883
+        ],
+        [
+          -1.5259073033015174,
+          -0.03787797291111092
+        ],
+        [
+          -1.2972751544450607,
+          -0.038912562405201245
+        ],
+        [
+          -0.0,
+          -4.715880409269875
+        ],
+        [
+          -0.0,
+          -4.690508992994864
+        ],
+        [
+          -0.0,
+          -4.686143780633914
+        ],
+        [
+          -0.0,
+          -4.684074601645736
+        ],
+        [
+          1.2972751544450607,
+          -0.038912562405201245
+        ],
+        [
+          1.5259073033015174,
+          -0.03787797291111092
+        ],
+        [
+          1.9531207550240695,
+          -0.03569536673063883
+        ],
+        [
+          4.25588820284876,
+          -0.023009658593130977
+        ]
+      ],
+      "matrix_vs_cubic_max_difference": 4.832744085697456e-15,
+      "matrix_pole_max_relative_residual": 3.4705549202497027e-14,
+      "Schur_identity_absolute_error": 2.7755575615628914e-16
+    },
+    {
+      "k_dimensionless": 5.0,
+      "poles": [
+        [
+          -6.495705045130855,
+          -0.014420741264833378
+        ],
+        [
+          -5.289211062027502,
+          -0.018493948430225393
+        ],
+        [
+          -5.148710514881505,
+          -0.019049403707753543
+        ],
+        [
+          -5.085918306210205,
+          -0.019303506622542432
+        ],
+        [
+          -0.0,
+          -4.733058243926466
+        ],
+        [
+          -0.0,
+          -4.724911829595694
+        ],
+        [
+          -0.0,
+          -4.723800919040638
+        ],
+        [
+          -0.0,
+          -4.723292713211062
+        ],
+        [
+          5.085918306210205,
+          -0.019303506622542432
+        ],
+        [
+          5.148710514881505,
+          -0.019049403707753543
+        ],
+        [
+          5.289211062027502,
+          -0.018493948430225393
+        ],
+        [
+          6.495705045130855,
+          -0.014420741264833378
+        ]
+      ],
+      "matrix_vs_cubic_max_difference": 9.046955311296225e-15,
+      "matrix_pole_max_relative_residual": 8.57768259472724e-14,
+      "Schur_identity_absolute_error": 7.298128296362863e-12
+    }
+  ],
+  "public_input_effective_neutron": {
+    "classification": "PUBLIC_INPUT_CALIBRATION_NOT_INDEPENDENT_PREDICTION",
+    "new_assumptions": [
+      "identify lowest positive k=0 response mode with a phenomenological neutron pole",
+      "affine energy map fixed by observed mass and lifetime",
+      "constant externally supplied lapse scales the complete complex pole",
+      "static whole-state coupling Hg=mass_energy*phi"
+    ],
+    "frequency_origin": 0.8164893279180281,
+    "energy_scale_MeV": 9.213865636031547e-24,
+    "rest_mass_energy_readback_MeV": 939.56542194,
+    "rest_pole_relative_energy_MeV": [
+      0.0,
+      -3.7466527601320583e-25
+    ],
+    "proper_lifetime_readback_s": 878.4,
+    "external_lapse": 1.0,
+    "coordinate_lifetime_s": 878.4,
+    "static_gravity_response_MeV": [
+      [
+        939.56542194,
+        0.0
+      ],
+      [
+        0.0,
+        939.56542194
+      ]
+    ],
+    "survival_at_878_4_coordinate_seconds": 0.36787944117144233,
+    "mass_lifetime_independently_validated": false,
+    "metric_solved_from_Gamma_NS": false,
+    "spin_charge_mapping_derived": false
+  },
+  "not_implemented": [
+    "full 3D topological and binding spatial operator",
+    "weak-transition vertex from same Gamma_NS",
+    "neutron spin and charge sector derivation",
+    "universal metric variation and full gravity field"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "sha256": {
+    "run.py": "397bffe7b94dcf1323a51655adc8f9f40f3cf896ab2a0a5b3141f2f9babd3b24",
+    "inputs.json": "aab658d0c0bf1e41f0df054f521b11eebc876eead1a8397b3346259fa925d2f7"
+  },
+  "classification": "IMPLEMENTATION_AND_NUMERICAL_CHECKS_COMPLETE_WITHIN_DECLARED_SCOPE",
+  "whole_neutron_theory_validation_complete": false
+}
