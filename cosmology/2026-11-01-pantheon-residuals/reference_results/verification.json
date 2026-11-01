@@ -1,0 +1,14 @@
+{
+  "NS_fixed": {
+    "chi2": 1386.816992579125,
+    "difference_from_reference": -2.2737367544323206e-13,
+    "max_row_residual_difference_mag": 3.649858193455202e-15
+  },
+  "GR_noLambda_curvature": {
+    "chi2": 1434.628931381686,
+    "difference_from_reference": -5.848505679750815e-09,
+    "max_row_residual_difference_mag": 1.1458212156867376e-10
+  },
+  "GR_grid_minimum_Omega_m": 0.0,
+  "scope": "same-environment numerical cross-check; not third-party physical validation"
+}

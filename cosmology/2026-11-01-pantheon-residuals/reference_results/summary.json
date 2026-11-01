@@ -1,0 +1,67 @@
+{
+  "run_date_KST": "2026-11-01",
+  "classification": "in_sample_fixed_NS_background_residual_comparison_not_independent_prediction",
+  "selection": "IS_CALIBRATOR == 0 and zHD > 0.01; retain all selected light-curve rows and corresponding covariance",
+  "input_rows": 1701,
+  "selected_rows": 1580,
+  "selected_unique_CID": 1466,
+  "covariance": "full STAT+SYS selected submatrix; symmetrized as (C+C.T)/2",
+  "maximum_input_asymmetry": 0.0,
+  "observable": "m_b_corr; one additive magnitude offset profiled separately for every model; no H0 determination",
+  "distance": "dL_dimensionless=(1+zHEL)*S_k(integral_0^zHD du/E(u))",
+  "NS": {
+    "alpha": 1.4835435161693789,
+    "nu": 0.8263146605293827,
+    "Lambda": 0,
+    "coefficients_refit_this_run": false
+  },
+  "GR_noLambda": {
+    "Omega_m": 6.587969835247239e-11,
+    "Omega_k": 0.9999999999341203,
+    "bounds_Omega_m": [
+      0,
+      3
+    ],
+    "optimizer_success": true
+  },
+  "models": {
+    "NS_fixed": {
+      "offset": 23.818750995114076,
+      "chi2": 1386.8169925791253,
+      "rms": 0.15339980444100576
+    },
+    "GR_noLambda_curvature": {
+      "offset": 23.861370220132127,
+      "chi2": 1434.6289313875345,
+      "rms": 0.1579579139107827
+    }
+  },
+  "delta_chi2_NS_minus_GR": -47.811938808409195,
+  "numerical_checks": {
+    "NS_fixed": {
+      "max_magnitude_change_96_to_192": 7.105427357601002e-15,
+      "chi2_change": -4.547473508864641e-13,
+      "weighted_offset_residual": 3.503420094828273e-10
+    },
+    "GR_noLambda_curvature": {
+      "max_magnitude_change_96_to_192": 1.7763568394002505e-14,
+      "chi2_change": 9.094947017729282e-13,
+      "weighted_offset_residual": 1.1165281461099372e-10
+    }
+  },
+  "binning": "fixed display edges; joint generalized least squares bin means with full covariance; conditional covariance after intercept removal; GR shape uncertainty not propagated",
+  "not_established": [
+    "A-path N=1701 saved-table exact reproduction",
+    "permanent physical residual or residual-memory causal identification",
+    "blind target-excluded independence",
+    "third-party reproduction"
+  ],
+  "input_sha256": {
+    "Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+    "Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  }
+}
